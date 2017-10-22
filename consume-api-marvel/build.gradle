@@ -1,0 +1,12 @@
+plugins {
+    id 'application'
+}
+mainClassName = 'org.znk.handson.jigsaw.http.Application'
+
+dependencies {
+    compile 'com.sparkjava:spark-core:2.6.0'
+
+    implementation project(':api-marvel')
+    
+    runtimeOnly project(':marvel-local-impl')
+}

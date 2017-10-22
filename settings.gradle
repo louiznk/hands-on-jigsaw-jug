@@ -1,0 +1,6 @@
+rootProject.name = "hands-on-jigsaw"
+
+include 'api-marvel'
+include 'marvel-local-impl'
+include 'consume-api-marvel'
+
