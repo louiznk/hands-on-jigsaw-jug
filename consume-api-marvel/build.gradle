@@ -1,3 +1,5 @@
+import java.util.regex.Matcher
+
 plugins {
     id 'application'
 }
@@ -19,6 +21,25 @@ run {
     }
 }
 
+startScripts {
+    inputs.property("moduleName", moduleName)
+    doFirst {
+        classpath = files()
+        defaultJvmOpts = [
+                '--module-path', 'APP_HOME_LIBS', // Multi plateform replace in doLast
+                '--module', mainClassName
+        ]
+    }
+    doLast{
+        def bashFile = new File(outputDir, applicationName)
+        String bashContent = bashFile.text
+        bashFile.text = bashContent.replaceFirst('APP_HOME_LIBS', Matcher.quoteReplacement('$APP_HOME/lib'))
+
+        def batFile = new File(outputDir, applicationName + ".bat")
+        String batContent = batFile.text
+        batFile.text = batContent.replaceFirst('APP_HOME_LIBS', Matcher.quoteReplacement('%APP_HOME%\\lib'))
+    }
+}
 
 dependencies {
     compile 'com.sparkjava:spark-core:2.6.0'
