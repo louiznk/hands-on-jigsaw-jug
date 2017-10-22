@@ -6,6 +6,19 @@ subprojects {
         sourceCompatibility = 9
         targetCompatibility = 9
 
+        compileJava {
+
+            inputs.property("moduleName", moduleName) // add modulename properties
+            doFirst {
+                // use module-path instead of classpath (and reset it)
+                options.compilerArgs = [
+                        '--module-path', classpath.asPath,
+                ]
+                classpath = files() // clean
+            }
+        }
+
+
         test {
 
             // listen to events in the test execution lifecycle

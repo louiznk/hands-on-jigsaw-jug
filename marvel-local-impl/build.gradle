@@ -5,21 +5,11 @@ ext.moduleName = "org.znk.handson.jigsaw.api.local.impl"
 
 dependencies {
     api project(':api-marvel')
-    
+
     testImplementation 'junit:junit:4.12'
 }
 
-compileJava {
 
-    inputs.property("moduleName", moduleName) // add modulename properties
-    doFirst {
-        // use module-path instead of classpath (and reset it)
-        options.compilerArgs = [
-                '--module-path', classpath.asPath,
-        ]
-        classpath = files() // clean
-    }
-}
 
 
 
