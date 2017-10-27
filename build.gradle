@@ -18,8 +18,34 @@ subprojects {
             }
         }
 
+        compileTestJava {
+            inputs.property("moduleName", moduleName)
+            doFirst {
+                options.compilerArgs = [
+                        '--module-path', classpath.asPath,
+                        '--add-modules', 'junit',
+                        '--add-reads', "$moduleName=junit",
+//                        '--add-reads', "$moduleName=hamcrest.core",
+                        '--patch-module', "$moduleName=" + files(sourceSets.test.java.srcDirs).asPath,
+                ]
+                classpath = files()
+            }
+        }
 
         test {
+            inputs.property("moduleName", moduleName)
+            doFirst {
+                jvmArgs = [
+                        '--module-path', classpath.asPath,
+                        '--add-modules', 'ALL-MODULE-PATH',
+                        '--add-reads', "$moduleName=junit",
+                        '--add-reads', "$moduleName=hamcrest.core",
+                        '--add-exports', "$moduleName/$moduleName=junit",
+                        '--add-exports', "$moduleName/$moduleName=hamcrest.core",
+                        '--patch-module', "$moduleName=" + files(sourceSets.test.java.outputDir).asPath,
+                ]
+                classpath = files()
+            }
 
             // listen to events in the test execution lifecycle
             beforeTest { descriptor ->
