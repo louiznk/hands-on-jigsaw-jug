@@ -6,6 +6,8 @@ subprojects {
         sourceCompatibility = 9
         targetCompatibility = 9
 
+        compileJava.options.encoding = 'UTF-8'
+
         test {
 
             // listen to events in the test execution lifecycle
