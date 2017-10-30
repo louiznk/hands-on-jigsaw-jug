@@ -1,0 +1,10 @@
+digraph "summary" {
+  "spark.core"                                       -> "java.base (java.base)";
+  "spark.core"                                       -> "legacy...";
+  "org.znk.handson.jigsaw.api.local.impl"            -> "java.base (java.base)";
+  "org.znk.handson.jigsaw.api.local.impl"            -> "org.znk.handson.jigsaw.api";
+  "org.znk.handson.jigsaw.http"                      -> "java.base (java.base)";
+  "org.znk.handson.jigsaw.http"                      -> "org.znk.handson.jigsaw.api";
+  "org.znk.handson.jigsaw.http"                      -> "spark.core";
+  "org.znk.handson.jigsaw.api"                       -> "java.base (java.base)";
+}

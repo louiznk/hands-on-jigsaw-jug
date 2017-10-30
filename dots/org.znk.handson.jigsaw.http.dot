@@ -1,0 +1,10 @@
+digraph "org.znk.handson.jigsaw.http" {
+    // Path: /home/louis/Dev/java9/hands-on-jigsaw/./consume-api-marvel/build/libs/consume-api-marvel.jar
+   "org.znk.handson.jigsaw.http"                      -> "java.lang (java.base)";
+   "org.znk.handson.jigsaw.http"                      -> "java.lang.invoke (java.base)";
+   "org.znk.handson.jigsaw.http"                      -> "java.util (java.base)";
+   "org.znk.handson.jigsaw.http"                      -> "java.util.function (java.base)";
+   "org.znk.handson.jigsaw.http"                      -> "java.util.stream (java.base)";
+   "org.znk.handson.jigsaw.http"                      -> "org.znk.handson.jigsaw.api (org.znk.handson.jigsaw.api)";
+   "org.znk.handson.jigsaw.http"                      -> "spark (spark.core)";
+}

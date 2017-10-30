@@ -1,0 +1,9 @@
+digraph "org.znk.handson.jigsaw.api.local.impl" {
+    // Path: /home/louis/Dev/java9/hands-on-jigsaw/./marvel-local-impl/build/libs/marvel-local-impl.jar
+   "org.znk.handson.jigsaw.api.local.impl"            -> "java.lang (java.base)";
+   "org.znk.handson.jigsaw.api.local.impl"            -> "java.lang.invoke (java.base)";
+   "org.znk.handson.jigsaw.api.local.impl"            -> "java.util (java.base)";
+   "org.znk.handson.jigsaw.api.local.impl"            -> "java.util.function (java.base)";
+   "org.znk.handson.jigsaw.api.local.impl"            -> "java.util.stream (java.base)";
+   "org.znk.handson.jigsaw.api.local.impl"            -> "org.znk.handson.jigsaw.api (org.znk.handson.jigsaw.api)";
+}

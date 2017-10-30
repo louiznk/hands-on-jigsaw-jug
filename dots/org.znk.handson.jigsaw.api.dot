@@ -1,0 +1,6 @@
+digraph "org.znk.handson.jigsaw.api" {
+    // Path: /home/louis/Dev/java9/hands-on-jigsaw/./api-marvel/build/libs/api-marvel.jar
+   "org.znk.handson.jigsaw.api"                       -> "java.lang (java.base)";
+   "org.znk.handson.jigsaw.api"                       -> "java.util (java.base)";
+   "org.znk.handson.jigsaw.api"                       -> "org.znk.handson.jigsaw.api (org.znk.handson.jigsaw.api)";
+}
