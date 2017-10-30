@@ -5,6 +5,7 @@ subprojects {
         }
         sourceCompatibility = 9
         targetCompatibility = 9
+        compileJava.options.encoding = 'UTF-8'
 
         compileJava {
 
