@@ -1,0 +1,14 @@
+import java.util.regex.Matcher
+
+plugins {
+    id 'application'
+}
+
+ext.moduleName = "org.znk.handson.jigsaw.cli"
+
+dependencies {
+    implementation project(':api-marvel')
+    
+    runtimeOnly project(':marvel-local-impl')
+}
+
