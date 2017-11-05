@@ -117,7 +117,7 @@ compileJava {
 
 ```
 
-La property **moduleName** sera fournie par chaque module. Il faut donc dans chaque fichier **build.properties** du
+La property **moduleName** sera fournie par chaque module. Il faut donc dans chaque fichier **build.gradle** du
  * Projet **api-marvel** ajouter
 ```groovy
 ext.moduleName = "org.znk.handson.jigsaw.api"
