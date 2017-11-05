@@ -40,9 +40,9 @@ exports nom.du.package
 ```
 opens nom.du.package
 ```
- * Permettre à un module d'utiliser un autre module : **required** 
+ * Permettre à un module d'utiliser un autre module : **requires** 
 ```
-required nom.du.module
+requires nom.du.module
 ```
  * Préciser que l'on fournit l'implementation d'une interface (pour pouvoir l'utiliser avec le ServiceLoader) : **provides** _ **with** _ 
 ```
@@ -62,8 +62,8 @@ module nom.de.mon.module {
     
     opens nom.du.package.aa; // ouvre à la reflexivité le package nom.du.package.bb 
     
-    required nom.dun.autre.module; // permet d'utiliser les objets publique du module nom.dun.autre.module
-    required nom.dun.second.module; // permet d'utiliser les objets publique du module nom.dun.second.module
+    requires nom.dun.autre.module; // permet d'utiliser les objets publique du module nom.dun.autre.module
+    requires nom.dun.second.module; // permet d'utiliser les objets publique du module nom.dun.second.module
     
     provides nom.du.package.aa.InterfaceFoo with nom.du.package.cc.FooImpl; // fournit l'implementation nom.du.package.cc.FooImpl de nom.du.package.aa.InterfaceFoo pour le ServiceLoader
     
